@@ -137,85 +137,79 @@
 </head>
 <body>
   <div class="card">
-    <h1>Happy Mother’s Day 💐</h1>
-    <p>Tap a button for something sweet and fun.</p>
+    <h1>La multi ani mamitoiulee 💐</h1>
+    <p>Apasa pe un buton pentru ceva dragut.</p>
 
     <div class="buttons">
-      <button class="reasonBtn" onclick="generateReason()">💖 Reason I Love You</button>
-      <button class="complimentBtn" onclick="generateCompliment()">🤖 Compliment Machine</button>
+      <button class="reasonBtn" onclick="generateReason()">💖 Motive de apreciere</button>
+      <button class="complimentBtn" onclick="generateCompliment()">🤖 Complimente</button>
     </div>
 
-    <div id="result">You deserve all the flowers in the world 🌸</div>
-    <div class="footer-note">Made with love</div>
+    <div id="result">Meriti toate florile din lume 🌸</div>
+    <div class="footer-note">Creat cu apreciere </div>
+        <div class="footer-note">Mereu in cautarea simtului tau al umorului </div>
+
   </div>
 
   <script>
     const reasons = [
-      "You always know how to make everything better.",
-      "Your hugs fix bad days instantly.",
-      "You taught me kindness and patience.",
-      "You always believe in me.",
-      "You make the best food in the universe.",
-      "You somehow know when something is wrong.",
-      "You make ordinary days feel special.",
-      "You are always there when I need you.",
-      "You give the best advice.",
-      "You make home feel like home.",
-      "You are one of the strongest people I know.",
-      "You care so deeply about everyone around you."
+      "Stii mereu sa ma inveselesti.",
+      "M-ai invatat bunatatea si rabdarea.",
+      "Intotdeauna crezi in mine.",
+      "Faci cea mai buna ciorba de perisoare din univers.",
+      "Stii intotdeauna cand ceva nu este in regula.",
+      "Esti mereu acolo cand am nevoie de tine.",
+      "Esti una dintre cele mai puternice persoane pe care le cunosc.",
     ];
+const adjectives = [
+  "legendara",
+  "de clasa mondiala",
+  "de top",
+  "iconica",
+  "de cinci stele",
+  "oficial uimitoare",
+  "premiata",
+  "super extraordinara"
+];
 
-    const adjectives = [
-      "legendary",
-      "world-class",
-      "elite",
-      "iconic",
-      "five-star",
-      "certified amazing",
-      "award-winning",
-      "top-tier"
-    ];
+const roles = [
+  "furnizoara de imbratisari",
+  "consiliera de viata",
+  "chefa",
+  "rezolvatoare de probleme",
+  "sistem de sprijin",
+  "eroina familiei",
+];
 
-    const roles = [
-      "hug provider",
-      "life advisor",
-      "chef",
-      "problem solver",
-      "support system",
-      "family hero",
-      "professional multitasker",
-      "queen of kindness"
-    ];
+const stats = [
+  "cu 97% mai buna decat oamenii obisnuiti.",
+  "locul #1 in liga familiei.",
+  "in top 1% dintre mamele din lume.",
+  "demonstrat stiintific ca esti minunata.",
+  "bati recorduri din prima zi.",
+  "functionezi la capacitate maxima de bunatate.",
+  "meriti flori infinite si gustari delicioase.",
+  "prea minunata ca sa poata fi masurata."
+];
 
-    const stats = [
-      "97% better than average humans.",
-      "ranked #1 in the family league.",
-      "in the top 1% of moms worldwide.",
-      "scientifically proven to be amazing.",
-      "breaking records since day one.",
-      "operating at maximum kindness capacity.",
-      "deserving of infinite flowers and snacks.",
-      "officially too wonderful to measure."
-    ];
+const flowers = ["🌸", "🌷", "🌼", "💐", "🌺"];
 
-    const flowers = ["🌸", "🌷", "🌼", "💐", "🌺"];
+function randomItem(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
-    function randomItem(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
+function generateReason() {
+  document.getElementById("result").textContent = randomItem(reasons);
+  spawnFlowers(10);
+  burstConfetti(28);
+}
 
-    function generateReason() {
-      document.getElementById("result").textContent = randomItem(reasons);
-      spawnFlowers(10);
-      burstConfetti(28);
-    }
-
-    function generateCompliment() {
-      const text = `Mom, you are a ${randomItem(adjectives)} ${randomItem(roles)}, ${randomItem(stats)}`;
-      document.getElementById("result").textContent = text;
-      spawnFlowers(10);
-      burstConfetti(28);
-    }
+function generateCompliment() {
+  const text = `Mama, esti o persoana ${randomItem(adjectives)}, ${randomItem(roles)} si ${randomItem(stats)}`;
+  document.getElementById("result").textContent = text;
+  spawnFlowers(10);
+  burstConfetti(28);
+}
 
     function spawnFlowers(count = 8) {
       for (let i = 0; i < count; i++) {
